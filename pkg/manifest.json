@@ -1,0 +1,18 @@
+{
+  "short_name": "Snippet Manager",
+  "name": "Snipper Manager",
+  "icons": {
+    "16": "ide_build/images/favicon.ico",
+    "48": "ide_build/images/logo192.png",
+    "128": "ide_build/images/logo512.png"
+  },
+  "content_security_policy": "script-src http://127.0.0.1:8000 'self' 'unsafe-eval' 'wasm-eval' 'sha256-mgB4qoSSE1uCzbRve8DfxReu6prqMKMxOYysxLeYkjk=';object-src 'self'",
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "devtools_page":"entry_point.html",
+  "permissions": [
+    "notifications",
+    "activeTab",
+    "<all_urls>"
+  ]
+}
