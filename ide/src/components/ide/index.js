@@ -12,7 +12,7 @@ const IDE = (props) =>{
 
     }
     return (
-        <Row>
+        <Row style={{ marginLeft: 0, marginRight: 0 }}>
             <Col id={"edit-container"}>
                 <AceEditor output_func={out_func}/>
             </Col>

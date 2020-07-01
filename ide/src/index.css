@@ -7,9 +7,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*Element in Output Container style*/
+#output{
+  box-shadow: 0 2px 4px rgba(0,0,0,.15), 0 0 3px rgba(0,0,0,.15);
+  background-color: gainsboro;
+  margin-top: 3%;
+}
+
+#l-output{
+  padding: 2% 5% 5% 2%;
+}
+
+.output-line{
+  box-shadow: 0 2px 4px rgba(0,0,0,.15), 0 0 3px rgba(0,0,0,.15);
+  margin-left: 10%;
+  margin-top: 2%;
+  align-content:space-evenly;
+  background-color: white;
+}
+.output-line p{
+  height: 50%;
+  margin-left: 3%;
+  /*background-color: white;*/
+}
+/*  --- */
 .App{
   margin: 0;
-  max-width: 100%;
+  width: 100%;
+  padding: 0px 0px 0px 0px !important;
+  overflow-y: hidden !important;
 }
 
 code {

@@ -14,20 +14,20 @@ function App() {
     React.useEffect(()=>{
 
         window.languagePluginLoader.then(()=>setState({loaded:true}))
-        // window.console.log = function(msg , code){
-        //     if(msg === "<<<<< Python Output >>>>>"){
-        //         if(!is_code) {
-        //             is_code = true
-        //         }
-        //         else {
-        //             is_code = false
-        //         }
-        //     }
-        //
-        //     if (is_code && msg !== "<<<<< Python Output >>>>>") {
-        //         dispatch({type: 'SET_OUTPUT', payload: msg})
-        //     }
-        // }
+        window.console.log = function(msg , code){
+            if(msg === "<<<<< Python Output >>>>>"){
+                if(!is_code) {
+                    is_code = true
+                }
+                else {
+                    is_code = false
+                }
+            }
+
+            if (is_code && msg !== "<<<<< Python Output >>>>>") {
+                dispatch({type: 'SET_OUTPUT', payload: msg})
+            }
+        }
     },[])
   return (
       <div className="App">

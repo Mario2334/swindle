@@ -10,7 +10,7 @@ var languagePluginLoader = new Promise((resolve, reject) => {
 
     var local_file = window.location.origin + "/javascript/pyodide/"
     if (chrome.extension){
-        local_file = window.location.origin + "/build/javascript/pyodide/"
+        local_file = window.location.origin + "/ide_build/javascript/pyodide/"
     }
 
     ////////////////////////////////////////////////////////////

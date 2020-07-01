@@ -1,6 +1,6 @@
 export let getChromePath = (path) =>{
     if(window.chrome.extension){
-        return "/build/"+path
+        return "/ide_build/"+path
     }
     return path
 }

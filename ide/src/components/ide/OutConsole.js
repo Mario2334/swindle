@@ -7,10 +7,16 @@ let OutConsole = (props) =>{
     let [global_state, dispatch] = useContext(Context);
 
     return (
+        // <React.Fragment>
+        //     <Container id="output">
+        //         <div id={"l-output"}>
+        //             {global_state.output.map(output =><Row className="output-line"><p>{output}</p></Row>)}
+        //         </div>
+        //     </Container>
+        // </React.Fragment>
+
         <React.Fragment>
-            <Container id="output">
-                {global_state.output.map(output =><Row>{output}</Row>)}
-            </Container>
+            {global_state.output.map(output =><Row><p>{output}</p></Row>)}
         </React.Fragment>
     )
 }

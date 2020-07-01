@@ -1,12 +1,12 @@
 {
-  "short_name": "Snippet Manager",
-  "name": "Snipper Manager",
+  "short_name": "Swindle",
+  "name": "Swindle",
   "icons": {
-    "16": "ide_build/images/favicon.ico",
-    "48": "ide_build/images/logo192.png",
-    "128": "ide_build/images/logo512.png"
+    "16": "ide_build/images/letter-s.png",
+    "48": "ide_build/images/letter-s.png",
+    "128": "ide_build/images/letter-s.png"
   },
-  "content_security_policy": "script-src http://127.0.0.1:8000 'self' 'unsafe-eval' 'wasm-eval' 'sha256-mgB4qoSSE1uCzbRve8DfxReu6prqMKMxOYysxLeYkjk=';object-src 'self'",
+  "content_security_policy": "script-src https://pyodide-build.s3.ap-south-1.amazonaws.com/ 'self' 'unsafe-eval' 'wasm-eval' 'sha256-fqjEYVFwCWK4rZgBFr8vq1jjh/cilX8HooHy5mxJOdc=';object-src 'self'",
   "manifest_version": 2,
   "version": "0.0.1",
   "devtools_page":"entry_point.html",
