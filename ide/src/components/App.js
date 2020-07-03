@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import IDE from "./ide";
+import IDE from "./Ide";
 import {Context} from "./store";
 import {Loader} from "./controller/Loader";
 

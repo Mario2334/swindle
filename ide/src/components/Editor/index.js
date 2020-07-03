@@ -1,7 +1,5 @@
 import React, {useContext, useReducer} from "react";
 import Navbar from "react-bootstrap/Navbar";
-// import play_button from '../../../public/images/play_button.svg';
-import Reducer from "../store/reducer";
 import {Context} from "../store";
 import pythonConsoleRun from "../controller/python_bl";
 import {getChromePath} from "../../utils/compUtiles";

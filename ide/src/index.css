@@ -1,3 +1,7 @@
+#root,html,body,#root,.App{
+  height: 100%;
+}
+
 body {
   /*margin: 0;*/
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -53,13 +57,12 @@ code {
 }
 
 #edit-container{
-min-height: 1440px;
+min-height: 100%
 }
 
-/*#output-container{*/
-/*  min-width: 60%;*/
-/*  background-color: white;*/
-/*}*/
+#output-container{
+  height: 100vh;
+}
 
 #console-runner{
   float: right;
@@ -74,4 +77,85 @@ min-height: 1440px;
 
 .console-img:hover{
   cursor: pointer;
+}
+#Report-View{
+  height: 100%;
+  /*display: inline-block;*/
+  /*vertical-align: middle;*/
+  width: 100%;
+  overflow: scroll;
+}
+#Console-View{
+  height: 100%;
+  width: 100%;
+
+  /*display: inline-block;*/
+  /*vertical-align: middle;*/
+  float: none;
+}
+/* Console html */
+.terminalCont{
+  background: black;
+  width: 100%;
+  border-radius: 4px;
+  padding:12px 0 0 0;
+  font-family: 'Roboto Mono', monospace;
+  /*opacity: 1;*/
+  height: 100%;
+  /*animation:*/
+  /*        slideDownAnimation 1s ease-in-out 1s forwards,*/
+  /*        fadeInAnimation 0.8s ease-in-out 1s forwards;*/
+}
+
+.term-tab{
+  margin-top: -20px;
+
+}
+
+.tab-content{
+  height: 100%;
+}
+.tab-pane{
+  height: 88%;
+}
+
+.userEnteredText{
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#terminalReslutsCont{
+  width:100%;
+  height: 91.5%;
+  padding: 12px;
+  overflow-y: auto;
+  resize: none;
+  border: none;
+  font-size: 14px;
+  line-height: 28px;
+  display: block;
+  color: rgba(255,255,255,0.9);
+}
+#terminalTextInput{
+  background: black;
+  display: block;
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  color: white;
+  padding: 18px;
+  font-size: 14px;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.out-switch-nav{
+  width: 10%;
+}
+.out-switch-nav:hover{
+  cursor: pointer;
+
 }

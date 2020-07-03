@@ -3,7 +3,7 @@ import {Context} from "../store";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-let OutConsole = (props) =>{
+let ReportView = (props) =>{
     let [global_state, dispatch] = useContext(Context);
 
     return (
@@ -16,9 +16,9 @@ let OutConsole = (props) =>{
         // </React.Fragment>
 
         <React.Fragment>
-            {global_state.output.map(output =><Row><p>{output}</p></Row>)}
+            {global_state.output.map(output =><Row style={{marginLeft: 0, marginRight: 0}}><p>{output}</p></Row>)}
         </React.Fragment>
     )
 }
 
-export default OutConsole;
+export default ReportView;
