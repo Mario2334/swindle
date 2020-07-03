@@ -17,7 +17,7 @@ let ReportView = (props) =>{
 
         <React.Fragment>
             <div id={"l-output"}>
-                {global_state.output.map(output =><Row style={{marginLeft: 0, marginRight: 0}}><p>{output}</p></Row>)}
+                {/*{global_state.output.map(output =><Row style={{marginLeft: 0, marginRight: 0}}><p>{output}</p></Row>)}*/}
             </div>
         </React.Fragment>
     )

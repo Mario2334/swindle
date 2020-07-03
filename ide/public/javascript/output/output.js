@@ -13,9 +13,14 @@ function output_container(){
 
 
 function fetch_data(url){
-    return $.get({
+    var data = null;
+
+    $.get({
         url: url,// mandatory
-        data: data,
-        async:false // to make it synchronous
+        async:false, // to make it synchronous
+        success: function(json){
+            data = json
+        }
     });
+    return data;
 }
