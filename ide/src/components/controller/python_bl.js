@@ -4,7 +4,7 @@ const pythonConsoleRun = async (code)=>{
     try {
         console.log("<<<<< Python Output >>>>>")
         // await window.pyodide.loadPackage("numpy")
-        let output = await window.pyodide.runPythonAsync(code)
+        let output = window.pyodide.runPythonAsync(code)
         console.log("<<<<< Python Output >>>>>")
         return [output,200]
     }

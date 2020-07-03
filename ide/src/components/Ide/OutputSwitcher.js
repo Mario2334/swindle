@@ -18,10 +18,10 @@ export const OutputSwitcher = (props) => {
         ?(
             <div style={{height:"100%"}}>
                 <Tabs activeKey={state.viewType} onSelect={(k)=>select_tab(k)}>
-                    <Tab eventKey="Console" title="Console">
+                    <Tab id="dev-console"  eventKey="Console" title="Console">
                         <Console/>
                     </Tab>
-                    <Tab eventKey="Report" title={"Report"}>
+                    <Tab id="dev-report" eventKey="Report" title={"Report"}>
                         <ReportView/>
                     </Tab>
                 </Tabs>

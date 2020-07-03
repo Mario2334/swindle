@@ -14,7 +14,6 @@ let AceEditor = (props) =>{
 
     const handleOnSubmit = (event) =>{
         let code = state.editor.getValue();
-
         pythonConsoleRun(code).then().catch()
 
     }

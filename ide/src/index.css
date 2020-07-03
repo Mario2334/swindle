@@ -20,6 +20,9 @@ body {
 
 #l-output{
   padding: 2% 5% 5% 2%;
+  -ms-overflow-x: scroll;
+  -ms-overflow-y: scroll !important;
+  overflow: scroll !important;
 }
 
 .output-line{
@@ -78,6 +81,7 @@ min-height: 100%
 .console-img:hover{
   cursor: pointer;
 }
+/*For Tab Report and Output*/
 #Report-View{
   height: 100%;
   /*display: inline-block;*/
@@ -93,6 +97,16 @@ min-height: 100%
   /*vertical-align: middle;*/
   float: none;
 }
+
+/*For devtool Report and Output*/
+#dev-report{
+  overflow: scroll;
+}
+
+#dev-console{
+
+}
+
 /* Console html */
 .terminalCont{
   background: black;
@@ -108,7 +122,7 @@ min-height: 100%
 }
 
 .term-tab{
-  margin-top: -20px;
+  padding-bottom: 20px;
 
 }
 
@@ -117,6 +131,7 @@ min-height: 100%
 }
 .tab-pane{
   height: 88%;
+  overflow: scroll;
 }
 
 .userEnteredText{
@@ -150,6 +165,8 @@ min-height: 100%
   font-size: 14px;
   outline: none;
   font-family: 'Roboto Mono', monospace;
+  height: 5%;
+  padding-bottom: 2%;
 }
 
 .out-switch-nav{
