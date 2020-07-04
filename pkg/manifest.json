@@ -12,7 +12,6 @@
   "devtools_page":"entry_point.html",
   "permissions": [
     "notifications",
-    "activeTab",
-    "<all_urls>"
+    "activeTab"
   ]
 }

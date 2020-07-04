@@ -29,13 +29,13 @@ export const OutputSwitcher = (props) => {
         )
         :(
             <Row style={{height: "100%", marginLeft: 0, marginRight: 0}}>
-                <div style={{width:"100%" , height: "60%"}}>
+                <div style={{width:"100%" , height: "55%"}}>
                     <div id="Report-View">
                         <ReportView/>
                     </div>
                 </div>
                 <br/>
-                <div style={{width:"100%" , height: "40%"}}><div id="Console-View">
+                <div style={{width:"100%" , height: "45%"}}><div id="Console-View">
                     <Console isTab={true}/>
                     </div>
                 </div>

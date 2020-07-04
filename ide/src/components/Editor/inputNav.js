@@ -1,16 +1,14 @@
 import React from 'react'
+import {Context} from "../store";
 
 let InputNav = (props)=>{
+    let [global_state, dispatch] = React.useContext(Context);
 
-    let addTextToResults = (textToAdd)=>{
-        document.getElementById('terminalReslutsCont').innerHTML += "<p>" + textToAdd + "</p>";
-        props.scrollToBottomOfResults();
-    }
     const submit_input= (event)=>{
         if(event.key === "Enter"){
-            console.log(event.current);
-            document.getElementById('terminalReslutsCont').innerHTML += `<p style="color: red">Text to Add</p>`
-            props.scrollToBottomOfResults();
+            dispatch({type: 'SET_OUTPUT', payload: event.currentTarget.value})
+            // document.getElementById('terminalReslutsCont').innerHTML += `<p style="color: red">Text to Add</p>`
+            event.currentTarget.value=""
         }
     }
     const checkWord = (word) =>{
