@@ -1,5 +1,10 @@
 const Reducer = (state, action) => {
     switch (action.type) {
+        case 'RESET_OUTPUT':
+            return {
+                ...state,
+                output: []
+            }
         case 'SET_OUTPUT':
             return {
                 ...state,

@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import IDE from "./Ide";
 import {Context} from "./store";
-import {Loader} from "./controller/Loader";
+import {Loader} from "./Controller/Loader";
 
 function App() {
     let is_code=false

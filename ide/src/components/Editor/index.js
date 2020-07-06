@@ -1,7 +1,7 @@
 import React, {useContext, useReducer} from "react";
 import Navbar from "react-bootstrap/Navbar";
 import {Context} from "../store";
-import pythonConsoleRun from "../controller/python_bl";
+import pythonConsoleRun from "../Controller/python_bl";
 import {getChromePath} from "../../utils/compUtiles";
 
 let AceEditor = (props) =>{
@@ -13,6 +13,7 @@ let AceEditor = (props) =>{
     },[]);
 
     const handleOnSubmit = (event) =>{
+        dispatch({type: 'RESET_OUTPUT'})
         let code = state.editor.getValue();
         pythonConsoleRun(code).then().catch((e)=>{
             console.log("<<<<< Python Output >>>>>")
