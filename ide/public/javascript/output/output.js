@@ -6,11 +6,51 @@ function output_element(tag){
     return node
 }
 
-
 function output_container(){
-    return document.getElementsById("output-div")
+    return document.getElementById("output-div")
 }
 
+var get ={
+    json : function (url) {
+        var data = null;
+        //todo send type as well
+        $.get({
+            url: url,// mandatory
+            async:false, // to make it synchronous
+            success: function(json){
+                data = JSON.stringify(json)
+            }
+        });
+        return data;
+    },
+    data:function (url) {
+        var data = null;
+        //todo send type as well
+        $.get({
+            url: url,// mandatory
+            async:false, // to make it synchronous
+            success: function(json){
+                data = json;
+            }
+        });
+        return data;
+    },
+    css:function (url) {
+        let cssData = fetch_data(url)
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href='data:text/css;charset=utf-8,' + escape(cssData);
+        document.getElementsByTagName('head')[0].appendChild(link);
+    },
+    js:function (url) {
+        let data = fetch_data(url)
+        let script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.text= data
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+}
 
 function fetch_data(url,type=null){
     var data = null;
@@ -19,8 +59,36 @@ function fetch_data(url,type=null){
         url: url,// mandatory
         async:false, // to make it synchronous
         success: function(json){
-            data = JSON.stringify(json)
+            data = json;
         }
     });
-    return data;
+    return data
+}
+
+
+function add_css(cssData) {
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href='data:text/css;charset=utf-8,' + escape(cssData);
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+function addHtml(htmlData) {
+    // function checkHtml(html) {
+    //     var doc = document.createElement('div');
+    //     doc.innerHTML = html;
+    //     if(doc.innerHTML === html){
+    //         return doc
+    //     }
+    //     else {
+    //         new Error("Invalid Html")
+    //     }
+    // }
+    // var output = document.getElementById("l-output")
+    // let node = checkHtml(htmlData)
+    // output.appendChild(node)
+    // htmlData = htmlData.trim("\n")
+    let nodes = $.parseHTML(htmlData);
+    $("#l-output").append(nodes)
 }

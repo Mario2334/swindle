@@ -16,10 +16,9 @@ let AceEditor = (props) =>{
         dispatch({type: 'RESET_OUTPUT'})
         let code = state.editor.getValue();
         pythonConsoleRun(code).then().catch((e)=>{
+            console.log(e)
             console.log("<<<<< Python Output >>>>>")
-        }
-
-        )
+        })
 
     }
 

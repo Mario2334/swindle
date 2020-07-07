@@ -25,6 +25,9 @@ function App() {
             }
 
             if (is_code && msg !== "<<<<< Python Output >>>>>") {
+                if(typeof msg == "object"){
+                    msg = JSON.stringify(msg)
+                }
                 dispatch({type: 'SET_OUTPUT', payload: msg})
             }
         }
