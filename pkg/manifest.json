@@ -11,7 +11,7 @@
   "version": "0.0.1",
   "devtools_page":"entry_point.html",
   "permissions": [
-    "notifications",
-    "activeTab"
+    "tabs",
+    "storage"
   ]
 }

@@ -4,16 +4,17 @@ import AceEditor from "../Editor";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {OutputSwitcher} from "./OutputSwitcher";
+import Helpers from "./helpers";
 
 const IDE = (props) =>{
     let [state , setState] = React.useState({output :""})
-    let out_func = ()=>{
-
-    }
+    React.useEffect(() =>{
+        window.Helpers = new Helpers();
+    },[])
     return (
         <Row style={{ marginLeft: 0, marginRight: 0 ,height:"100%"}}>
             <Col id={"edit-container"}>
-                <AceEditor output_func={out_func}/>
+                <AceEditor/>
             </Col>
             <Col id={"output-container"}>
                 <OutputSwitcher/>

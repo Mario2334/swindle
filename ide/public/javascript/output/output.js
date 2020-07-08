@@ -14,7 +14,7 @@ var get ={
     json : function (url) {
         var data = null;
         //todo send type as well
-        $.get({
+        window.$.get({
             url: url,// mandatory
             async:false, // to make it synchronous
             success: function(json){
@@ -26,7 +26,7 @@ var get ={
     data:function (url) {
         var data = null;
         //todo send type as well
-        $.get({
+        window.$.get({
             url: url,// mandatory
             async:false, // to make it synchronous
             success: function(json){
@@ -48,14 +48,15 @@ var get ={
         let script = document.createElement('script');
         script.type = 'text/javascript';
         script.text= data
-        document.getElementsByTagName('head')[0].appendChild(script);
+        script.nonce = "nonce-Nc3n83cnSAd3wc3Sasdfn939hc3"
+        document.body.appendChild(script);
     }
 }
 
 function fetch_data(url,type=null){
     var data = null;
     //todo send type as well
-    $.get({
+    window.$.get({
         url: url,// mandatory
         async:false, // to make it synchronous
         success: function(json){
@@ -89,6 +90,6 @@ function addHtml(htmlData) {
     // let node = checkHtml(htmlData)
     // output.appendChild(node)
     // htmlData = htmlData.trim("\n")
-    let nodes = $.parseHTML(htmlData);
-    $("#l-output").append(nodes)
+    let nodes = window.$.parseHTML(htmlData);
+    window.$("#l-output").append(nodes)
 }

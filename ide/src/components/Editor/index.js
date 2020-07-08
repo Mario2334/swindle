@@ -3,6 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import {Context} from "../store";
 import pythonConsoleRun from "../Controller/python_bl";
 import {getChromePath} from "../../utils/compUtiles";
+import jsPDF from "jspdf"
+import html2canvas from "html2canvas"
 
 let AceEditor = (props) =>{
     let [state , setState] =React.useState({editor : null,code:""})
@@ -10,6 +12,7 @@ let AceEditor = (props) =>{
 
     React.useEffect(()=>{
         setState({editor : window.ace.edit("editor")})
+
     },[]);
 
     const handleOnSubmit = (event) =>{
@@ -19,9 +22,33 @@ let AceEditor = (props) =>{
             console.log(e)
             console.log("<<<<< Python Output >>>>>")
         })
-
+        // window.chrome.runtime.sendMessage({message: "hi"}, (response) => {
+        //     console.log(response.message);
+        // });
     }
 
+    const handleReportPDF = (event) =>{
+        let report_ele = document.getElementById("l-output");
+        let report_w = report_ele.offsetWidth;
+        let report_h = report_ele.offsetHeight;
+
+
+        html2canvas(document.getElementById("l-output") , {width:report_w,height:report_h}).then(canvas => {
+           var img = canvas.toDataURL("image/png", 1.0);
+            let width = canvas.width
+           let height = canvas.height
+           let millimeters={}
+           millimeters.width = width
+           millimeters.height = height
+           let doc = new jsPDF("p", "mm", "a4")
+           doc.deletePage(1);
+           doc.addPage(millimeters.width, millimeters.height);
+           doc.addImage(img, 'PNG',0,0);
+           doc.save('NOME-DO-PDF.pdf');
+       });
+        // doc.fromHTML(report)
+        // doc.save()
+    }
     if(state.editor){
         state.editor.setTheme("ace/theme/monokai");
         state.editor.session.setMode("ace/mode/python")
@@ -37,8 +64,11 @@ let AceEditor = (props) =>{
     return(
         <React.Fragment>
             <Navbar id="console-runner" bg="light">
-               <img className={"console-img"} src={getChromePath("/images/play_button.svg")} onClick={handleOnSubmit}/>
-                <img className={"console-img"} src={getChromePath("/images/development.svg")}/>
+               <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/play_button.svg")} onClick={handleOnSubmit}/></Navbar.Brand>
+                <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/development.svg")}/></Navbar.Brand>
+                <Navbar.Brand className="nav-brand-end"><img className={"console-img"} src={getChromePath("/images/pdf.svg")} onClick={handleReportPDF}/></Navbar.Brand>
+                {/*<img className={"console-img"} src={getChromePath("/images/development.svg")}/>*/}
+                {/*<img className={"console-img"} src={getChromePath("/images/pdf.svg")}/>*/}
             </Navbar>
         <div id="editor"></div>
         </React.Fragment>

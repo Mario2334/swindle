@@ -70,12 +70,21 @@ min-height: 100%
 #console-runner{
   float: right;
   z-index: 9;
-  opacity: 0.4;}
+  /*opacity: 0.4;*/
+  background-color: rgba(255,255,255,0.4)!important;
+  padding: 0;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.nav-brand-end{
+  margin-right: 0!important;
+}
 
 .console-img{
   width: 15px;
   height: 15px;
-  margin-right:30% ;
+  /*margin-right:30% ;*/
 }
 
 .console-img:hover{
@@ -174,5 +183,4 @@ min-height: 100%
 }
 .out-switch-nav:hover{
   cursor: pointer;
-
 }
