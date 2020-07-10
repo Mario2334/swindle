@@ -15,7 +15,7 @@ let AceEditor = (props) =>{
 
     },[]);
 
-    const handleOnSubmit = (event) =>{
+    const handleOnRun = (event) =>{
         props.setState({loaded:false})
         dispatch({type: 'RESET_OUTPUT'})
         let code = state.editor.getValue();
@@ -30,11 +30,16 @@ let AceEditor = (props) =>{
         // });
     }
 
+    let newTab = (event) =>{
+        if (window.chrome.extension){
+            window.chrome.tabs.create({url:window.location.href})
+        }
+    }
+
     const handleReportPDF = (event) =>{
         let report_ele = document.getElementById("l-output");
         let report_w = report_ele.offsetWidth;
         let report_h = report_ele.offsetHeight;
-
 
         html2canvas(document.getElementById("l-output") , {width:report_w,height:report_h}).then(canvas => {
            var img = canvas.toDataURL("image/png", 1.0);
@@ -67,8 +72,8 @@ let AceEditor = (props) =>{
     return(
         <React.Fragment>
             <Navbar id="console-runner" bg="light">
-               <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/play_button.svg")} onClick={handleOnSubmit}/></Navbar.Brand>
-                <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/development.svg")}/></Navbar.Brand>
+               <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/play_button.svg")} onClick={handleOnRun}/></Navbar.Brand>
+                <Navbar.Brand><img className={"console-img"} onClick={newTab} src={getChromePath("/images/development.svg")}/></Navbar.Brand>
                 <Navbar.Brand className="nav-brand-end"><img className={"console-img"} src={getChromePath("/images/pdf.svg")} onClick={handleReportPDF}/></Navbar.Brand>
                 {/*<img className={"console-img"} src={getChromePath("/images/development.svg")}/>*/}
                 {/*<img className={"console-img"} src={getChromePath("/images/pdf.svg")}/>*/}
