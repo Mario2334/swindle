@@ -16,12 +16,15 @@ let AceEditor = (props) =>{
     },[]);
 
     const handleOnSubmit = (event) =>{
+        props.setState({loaded:false})
         dispatch({type: 'RESET_OUTPUT'})
         let code = state.editor.getValue();
+        let reportView = document.getElementById("l-output")
+        reportView.innerHTML =""
         pythonConsoleRun(code).then().catch((e)=>{
             console.log(e)
             console.log("<<<<< Python Output >>>>>")
-        })
+        }).finally(()=>props.setState({loaded:true}))
         // window.chrome.runtime.sendMessage({message: "hi"}, (response) => {
         //     console.log(response.message);
         // });
