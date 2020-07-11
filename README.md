@@ -7,7 +7,6 @@
 </h1>
 <h4 align="center">A Python Playground and Report Viewer Extension built on top of based on React and Pyodide.</h4>
 <p align="center">
-
   <img src="https://img.shields.io/badge/python-v3.7.4-informational" alt="Gitter">
   <a href="https://gitter.im/swindle-python/community"><img src=https://badges.gitter.im/swindle-python/community.svg"></a>
   <a href="https://saythanks.io/to/sanketm221995%40yahoo.co.in">
