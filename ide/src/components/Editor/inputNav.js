@@ -1,12 +1,13 @@
 import React from 'react'
 import {Context} from "../store";
+import {pythonConsoleRun} from "../Controller/python_bl";
 
 let InputNav = (props)=>{
     let [global_state, dispatch] = React.useContext(Context);
 
     const submit_input= (event)=>{
         if(event.key === "Enter"){
-            dispatch({type: 'SET_OUTPUT', payload: event.currentTarget.value})
+            pythonConsoleRun(event.currentTarget.value)
             // document.getElementById('terminalReslutsCont').innerHTML += `<p style="color: red">Text to Add</p>`
             event.currentTarget.value=""
         }

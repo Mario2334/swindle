@@ -1,5 +1,16 @@
+export const pythonConsoleRun = (code) =>{
+    console.log("<<<<< Python Output >>>>>")
+    try {
+        window.pyodide.runPython(code)
+    }
+    catch (e) {
+    }
+    finally {
+        console.log("<<<<< Python Output >>>>>")
+    }
+}
 
-const pythonConsoleRun = async (code)=>{
+const pythonEditorRun = async (code)=>{
     console.log("<<<<< Python Output >>>>>")
 
     await window.pyodide.runPythonAsync("for element in dir():\n" +
@@ -41,4 +52,4 @@ function parseOutput(outputObj) {
     }
 }
 
-export default pythonConsoleRun;
+export default pythonEditorRun;

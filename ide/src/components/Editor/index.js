@@ -1,7 +1,7 @@
 import React, {useContext, useReducer} from "react";
 import Navbar from "react-bootstrap/Navbar";
 import {Context} from "../store";
-import pythonConsoleRun from "../Controller/python_bl";
+import pythonEditorRun from "../Controller/python_bl";
 import {getChromePath} from "../../utils/compUtiles";
 import jsPDF from "jspdf"
 import html2canvas from "html2canvas"
@@ -21,13 +21,10 @@ let AceEditor = (props) =>{
         let code = state.editor.getValue();
         let reportView = document.getElementById("l-output")
         reportView.innerHTML =""
-        pythonConsoleRun(code).then().catch((e)=>{
+        pythonEditorRun(code).then().catch((e)=>{
             console.log(e)
             console.log("<<<<< Python Output >>>>>")
         }).finally(()=>props.setState({loaded:true}))
-        // window.chrome.runtime.sendMessage({message: "hi"}, (response) => {
-        //     console.log(response.message);
-        // });
     }
 
     let newTab = (event) =>{
