@@ -47,3 +47,39 @@ Pull from master for release . To get development pull from develop branch
 * Build app
 * Go to chrome -> Extension -> Developer Mode ON -> Load unpacked
 * open devtools , you should be able to see the Editor
+
+## Helpers
+
+These Function enable let you to write html , css , add javascript and 
+download data
+
+#### Add Scripts
+`from js import addHtml,add_css`
+ 
+ `addHtml("""`
+ `<div class='description'>`
+   `<div class='count'><span class='total'></span>Total</div>`
+  ` <div class='count'><span class='conf'></span>Confirmed</div>`
+   `<div class='count'><span class='deaths'></span>Deaths</div>`
+ `</div>`
+ `""")`
+ `addHtml("<div id='choropleth'/>")`
+ 
+ `add_css("""`
+ `.description {`
+ `  display: flex;`
+ `  padding: 15px 15px 30px;`
+ `} `
+
+#### Get Data/Javascript
+
+ `from js import Helpers`
+ 
+ `Helpers.get.js("https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.2/d3.js")`
+ `Helpers.get.js("https://cdn.plot.ly/plotly-latest.min.js")`
+ `Helpers.get.data("https://covid.ourworldindata.org/data/ecdc/total_cases.csv")`
+ `data = json.loads(get.data("https://get.geojs.io/v1/ip/country.json"))`
+ 
+    
+ 
+ 
