@@ -49,7 +49,7 @@ let AceEditor = (props) =>{
            doc.deletePage(1);
            doc.addPage(millimeters.width, millimeters.height);
            doc.addImage(img, 'PNG',0,0);
-           doc.save('NOME-DO-PDF.pdf');
+           doc.save('Report-View.pdf');
        });
     }
     if(state.editor){
