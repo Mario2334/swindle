@@ -8,7 +8,7 @@
   },
   "content_security_policy": "script-src https://pyodide-build.s3.ap-south-1.amazonaws.com/ 'self' 'unsafe-eval' 'wasm-eval' 'sha256-fqjEYVFwCWK4rZgBFr8vq1jjh/cilX8HooHy5mxJOdc=';object-src 'self'",
   "manifest_version": 2,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "devtools_page":"entry_point.html",
   "permissions": [
     "tabs",
