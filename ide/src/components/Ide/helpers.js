@@ -77,20 +77,6 @@ class Helpers {
 
 
     addHtml(htmlData) {
-        // function checkHtml(html) {
-        //     var doc = document.createElement('div');
-        //     doc.innerHTML = html;
-        //     if(doc.innerHTML === html){
-        //         return doc
-        //     }
-        //     else {
-        //         new Error("Invalid Html")
-        //     }
-        // }
-        // var output = document.getElementById("l-output")
-        // let node = checkHtml(htmlData)
-        // output.appendChild(node)
-        // htmlData = htmlData.trim("\n")
         let nodes = window.$.parseHTML(htmlData);
         window.$("#l-output").append(nodes)
     }
