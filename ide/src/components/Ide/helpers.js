@@ -49,11 +49,6 @@ class Helpers {
             js:function (url) {
                 let data = fetch_data(url)
                 window.eval(data)
-                // generate_hash(data)
-                // let script = document.createElement('script');
-                // script.type = 'text/javascript';
-                // script.text= data
-                // document.body.appendChild(script);
             }
         }
     }

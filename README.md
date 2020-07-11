@@ -19,6 +19,8 @@
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
+  <a href="#running-extension">Running extension</a> •
+
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/Mario2334/swindle/master/ide/public/images/walkthrough.gif)
@@ -40,7 +42,7 @@ Pull from master for release . To get development pull from develop branch
 * For building `npm run build`
 * Running `npm run start`
 
-### Running extension
+## Running extension
 
 * Build app
 * Go to chrome -> Extension -> Developer Mode ON -> Load unpacked

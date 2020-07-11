@@ -51,19 +51,11 @@ let AceEditor = (props) =>{
            doc.addImage(img, 'PNG',0,0);
            doc.save('NOME-DO-PDF.pdf');
        });
-        // doc.fromHTML(report)
-        // doc.save()
     }
     if(state.editor){
         state.editor.setTheme("ace/theme/monokai");
         state.editor.session.setMode("ace/mode/python")
         state.editor.setHighlightActiveLine(true);
-        // state.editor.on("change", function(e){
-        //     console.log(state.editor.session.getDocument().$lines)
-        //     for(let line in state.editor.session.getDocument().$lines){
-        //         console.log(state.editor.session.getDocument().$lines[line]);
-        //     }
-        // })
     }
 
     return(
@@ -72,8 +64,6 @@ let AceEditor = (props) =>{
                <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/play_button.svg")} onClick={handleOnRun}/></Navbar.Brand>
                 {window.chrome.devtools?<Navbar.Brand><img className={"console-img"} onClick={newTab} src={getChromePath("/images/development.svg")}/></Navbar.Brand>:null}
                 <Navbar.Brand className="nav-brand-end"><img className={"console-img"} src={getChromePath("/images/pdf.svg")} onClick={handleReportPDF}/></Navbar.Brand>
-                {/*<img className={"console-img"} src={getChromePath("/images/development.svg")}/>*/}
-                {/*<img className={"console-img"} src={getChromePath("/images/pdf.svg")}/>*/}
             </Navbar>
         <div id="editor"></div>
         </React.Fragment>

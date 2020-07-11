@@ -4,6 +4,7 @@ import {Context} from "../store";
 
 export let Console = (props)=>{
     let [global_state, dispatch] = React.useContext(Context);
+
     React.useEffect(()=>{
         scrollToBottomOfResults();
     },[global_state.output])
@@ -36,7 +37,6 @@ export let Console = (props)=>{
     return(
         <div className={props.isTab?"terminalCont term-tab":"terminalCont"}>
             <div id="terminalReslutsCont">
-                {/*{global_state.output.map(output => <p>{output}</p>)}*/}
                 {consoleText()}
             </div>
             <InputNav/>
