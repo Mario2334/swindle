@@ -70,7 +70,7 @@ let AceEditor = (props) =>{
         <React.Fragment>
             <Navbar id="console-runner" bg="light">
                <Navbar.Brand><img className={"console-img"} src={getChromePath("/images/play_button.svg")} onClick={handleOnRun}/></Navbar.Brand>
-                <Navbar.Brand><img className={"console-img"} onClick={newTab} src={getChromePath("/images/development.svg")}/></Navbar.Brand>
+                {window.chrome.devtools?<Navbar.Brand><img className={"console-img"} onClick={newTab} src={getChromePath("/images/development.svg")}/></Navbar.Brand>:null}
                 <Navbar.Brand className="nav-brand-end"><img className={"console-img"} src={getChromePath("/images/pdf.svg")} onClick={handleReportPDF}/></Navbar.Brand>
                 {/*<img className={"console-img"} src={getChromePath("/images/development.svg")}/>*/}
                 {/*<img className={"console-img"} src={getChromePath("/images/pdf.svg")}/>*/}

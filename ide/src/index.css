@@ -10,6 +10,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Ace Editor Search Styles*/
+.ace_search.right {
+  right: unset;
+}
 
 /*Element in Output Container style*/
 #output{
@@ -112,10 +116,6 @@ min-height: 100%
   overflow: scroll;
 }
 
-#dev-console{
-
-}
-
 /* Console html */
 .terminalCont{
   background: black;
@@ -185,15 +185,13 @@ min-height: 100%
   cursor: pointer;
 }
 
-
-/*Loader Styles*/
+/* Loader Styles */
 /* Absolute Center Spinner */
 .loading {
   position: fixed;
   z-index: 999;
   height: 2em;
   width: 2em;
-  overflow: show;
   margin: auto;
   top: 0;
   left: 0;
