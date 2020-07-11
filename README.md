@@ -44,7 +44,7 @@ Pull from master for release . To get development pull from develop branch
 ## Running extension
 
 * Build app
-* Go to chrome -> Extension -> Developer Mode ON -> Load unpacked
+* Go to chrome -> Extension -> Developer Mode ON -> Load unpacked(/repo/pkg)
 * open devtools , you should be able to see the Editor
 
 ## Helpers
@@ -144,7 +144,3 @@ for key in data.keys():
     text = document.createTextNode(data[key]);
     cell.appendChild(text);
 ```
-
-    
- 
- 
