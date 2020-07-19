@@ -13,6 +13,10 @@ export let Console = (props)=>{
         let output_list = []
         let is_exception = false
         for (let out of global_state.output){
+            if(out === "<<<<< Python Error >>>>>"){
+                is_exception = false;
+                continue;
+            }
             if(out === "Python exception:"){
                 is_exception = true
                 output_list.push(<p style={{color:"red"}}>{out}</p>)
@@ -23,6 +27,9 @@ export let Console = (props)=>{
                 continue
             }
             output_list.push(<p>{out}</p>)
+        }
+        if(is_exception){
+            dispatch({type: 'SET_OUTPUT', payload: "<<<<< Python Error >>>>>"})
         }
         return <React.Fragment>
             {output_list.map(output => output)}
