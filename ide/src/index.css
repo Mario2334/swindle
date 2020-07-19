@@ -26,7 +26,7 @@ body {
   padding: 2% 5% 5% 2%;
   -ms-overflow-x: scroll;
   -ms-overflow-y: scroll !important;
-  overflow: scroll !important;
+  overflow: auto !important;
 }
 
 .output-line{
@@ -100,7 +100,7 @@ min-height: 100%
   /*display: inline-block;*/
   /*vertical-align: middle;*/
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
 }
 #Console-View{
   height: 100%;
@@ -197,6 +197,29 @@ min-height: 100%
   left: 0;
   bottom: 0;
   right: 0;
+}
+/*Scrollbar Custom*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d0cdcd;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 157, 157, 0.34);
 }
 
 /* Transparent Overlay */
