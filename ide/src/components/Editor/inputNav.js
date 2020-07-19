@@ -12,9 +12,7 @@ let InputNav = (props)=>{
             event.currentTarget.value=""
         }
     }
-    const checkWord = (word) =>{
 
-    }
     return(
         <input onKeyDown={submit_input} id="terminalTextInput" type="text" placeholder="Try typing hi or help..." autoComplete="off"/>
     )

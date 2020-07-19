@@ -113,7 +113,7 @@ min-height: 100%
 
 /*For devtool Report and Output*/
 #dev-report{
-  overflow: scroll;
+  overflow: auto;
 }
 
 /* Console html */
@@ -140,7 +140,7 @@ min-height: 100%
 }
 .tab-pane{
   height: 88%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .userEnteredText{
